@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="tulipan1.png" type="image/x-icon">
+    <title>ೀ🌷༯</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          background: black;
+          overflow: hidden;
+          font-family: 'Arial', sans-serif;
+          color: white;
+          text-align: center;
+          height: 100vh;
+        }
+    
+        canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+    
+        .content {
+          position: relative;
+          top: 35%;
+          transform: translateY(-50%);
+        }
+    
+        h1 {
+          font-size: 4em;
+          letter-spacing: 0.2em;
+        }
+    
+        .highlight {
+          color: #00ffff;
+          text-shadow: 0 0 10px #00ffff;
+        }
+    
+        p {
+          margin-top: 20px;
+          font-size: 1.2em;
+        }
+    
+        button {
+          margin-top: 30px;
+          padding: 15px 30px;
+          font-size: 1em;
+          border: none;
+          border-radius: 10px;
+          background: #00ffff;
+          color: black;
+          cursor: pointer;
+          box-shadow: 0 0 10px #00ffff;
+        }
+    
+        button:hover {
+          background: #00cccc;
+        }
+      </style>    
+</head>
+
+<body>
+
+    <canvas id="starfield"></canvas>
+
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    let stars = [];
+    for (let i = 0; i < 200; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5,
+        o: Math.random()
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.o})`;
+        ctx.fill();
+      }
+    }
+
+    function animate() {
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+    <div class="greetings">
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+        <span>R</span>
+        <span>E</span>
+        <span>N</span>
+        <span>E</span>
+    </div>
+
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <div class="description">
+        <span>🇪🇸🇹o 🇪🇸 🇵🇦🇷🇦 🇹🇮 ˚ʚ♡ɞ˚</span>
+    </div>
+    <div class="button">
+        <div class="gradient-text">
+            <a href="flower.html" class="button" onclick="document.getElementById('musica').play()">CLICK</a>
+
+    </div>
+</div>
+
+<audio id="musica" loop>
+  <source src="glue song.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+
+</html>

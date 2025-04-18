@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+
+body{
+    color: azure;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /*6e5f87*/
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    /* padding-top: -30; */
+}
+
+.button {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    text-decoration: none !important;
+    opacity: 0.9;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'UnifrakturCook', cursive;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #100720;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /*color: #100720;*/
+}
+
+.button::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    filter: blur(20px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.gradient-text {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'UnifrakturCook', cursive;
+    background: #111;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff;
+    text-decoration: #fff;
+    color: #fff;
+}
+
+.gradient-text:visited {
+    background: #111;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff; /*7152a8*/
+    color: #fff;
+    text-decoration: #fff;
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button {
+        font-size: 1rem;
+    }
+}
